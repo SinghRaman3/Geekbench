@@ -2,6 +2,7 @@ import React from "react";
 import gpuImage from "../../assests/gpu.jpg";
 import cpuImage from "../../assests/cpu.jpg";
 import ramImage from "../../assests/ram.jpg";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="container-fluid">
@@ -27,6 +28,7 @@ const Home = () => {
           <img className="cpu img-fluid" src={cpuImage} alt="gpu" />
         </div>
         <div className="col-lg-6 p-5 d-flex align-items-center">
+            <div>
             A central processing unit (CPU), also called a central processor,
             main processor or just processor, is the electronic circuitry that
             executes instructions comprising a computer program. The CPU
@@ -40,6 +42,7 @@ const Home = () => {
             rising and falling edges of the clock signal, allowing their exact
             timing to be defined. This allows events in the CPU to be completed
             in the correct sequence, with sufficient time allowed for each step.
+            </div>
         </div>
       </div>
 

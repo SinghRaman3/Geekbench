@@ -41,6 +41,21 @@ const Navbar = () => {
                 Suggest a build
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/cpu">
+                Cpu
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/gpu">
+                Gpu
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/monitor">
+                Monitor
+              </Link>
+            </li>
           </ul>
 
           <Link type="button" className="btn btn-outline-info" to="/">
