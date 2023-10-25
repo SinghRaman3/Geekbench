@@ -1,28 +1,9 @@
-.nav-link{  
+.button{
     color: #fff;
-    position: relative;
+    text-decoration: none;
+    transition: color .18s ease-in
 }
 
-.nav-link:hover{
-    color: aqua;
-}
-
-.nav-link::after{
-    content: '';
-    opacity: 0;
-    transition: all 0.2s;
-    height: 2px;
-    width: 100%;
-    background-color: aqua;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.nav-link:hover::after{
-    opacity: 1;
-}
-
-.btn:hover{
-    color: #fff;
+.button:hover{
+    color: #f9b404;
 }

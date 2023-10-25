@@ -18,7 +18,11 @@ const Cpu = () => {
   return (
     <div>
       <div className="container mt-4">
-        <div className="card bg-dark mb-2">
+        <div
+          className="card mb-2"
+          data-bs-theme="dark"
+          style={{ backgroundColor: "#1e192b" }}
+        >
           <div className="card-body row p-2" style={{ color: "#fff" }}>
             <div className="col-lg-2" style={{ fontWeight: "600" }}>
               Name

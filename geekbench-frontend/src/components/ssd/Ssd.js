@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Monitor = () => {
+const Ssd = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/components/monitor")
+      .get("http://localhost:5000/components/ssd")
       .then(function (response) {
         console.log(response);
         setData(JSON.parse(JSON.stringify(response.data.documents)));
@@ -28,19 +28,16 @@ const Monitor = () => {
               Name
             </div>
             <div className="col-lg-2" style={{ fontWeight: "600" }}>
-              Resolution
+              Capacity
             </div>
             <div className="col-lg-2" style={{ fontWeight: "600" }}>
-              Refresh Time
+              Cache
             </div>
             <div className="col-lg-2" style={{ fontWeight: "600" }}>
-              Respone Time
+              Form factor
             </div>
-            <div className="col-lg-1" style={{ fontWeight: "600" }}>
-              Panel Type
-            </div>
-            <div className="col-lg-1" style={{ fontWeight: "600" }}>
-              Screen Size
+            <div className="col-lg-2" style={{ fontWeight: "600" }}>
+              Interace
             </div>
             <div className="col-lg-2" style={{ fontWeight: "600" }}>
               Price
@@ -53,12 +50,21 @@ const Monitor = () => {
               <div key={data._id} className="row py-4">
                 <div className="col-lg-2">{data.name}</div>
                 <div className="col-lg-2">
-                  {data.resolution[0] + "x" + data.resolution[1]}
+                  {data.capacity >= 2000
+                    ? "2TB"
+                    : data.capacity >= 1000
+                    ? "1TB"
+                    : data.capacity + "GB"}
                 </div>
-                <div className="col-lg-2">{data.refresh_rate + "hz"}</div>
-                <div className="col-lg-2">{data.response_time + "ms"}</div>
-                <div className="col-lg-1">{data.panel_type}</div>
-                <div className="col-lg-1">{data.screen_size}</div>
+                <div className="col-lg-2">
+                  {data.cache >= 2000
+                    ? "2TB"
+                    : data.cache >= 1000
+                    ? "1TB"
+                    : data.cache + "GB"}
+                </div>
+                <div className="col-lg-2">{data.form_factor}</div>
+                <div className="col-lg-2">{data.interface}</div>
                 <div className="col-lg-2">{data.price}</div>
               </div>
             </div>
@@ -69,4 +75,4 @@ const Monitor = () => {
   );
 };
 
-export default Monitor;
+export default Ssd;

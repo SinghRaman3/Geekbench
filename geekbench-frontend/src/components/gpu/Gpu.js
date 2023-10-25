@@ -18,21 +18,49 @@ const Gpu = () => {
   return (
     <div>
       <div className="container mt-4">
-        <div className="card bg-dark mb-2">
-          <div className="card-body row p-2" style={{ color: "#fff" }}>
-            <div className="col-lg-4" style={{ fontWeight: "600" }}>
+        <div
+          className="card mb-2"
+          data-bs-theme="dark"
+          style={{ backgroundColor: "#1e192b" }}
+        >
+          <div
+            className="card-body row p-2 d-flex align-items-center"
+            style={{ color: "#fff" }}
+          >
+            <div
+              className="col-lg-4"
+              style={{ fontWeight: "600", fontSize: "20px" }}
+            >
               Name
             </div>
-            <div className="col-lg-2" style={{ fontWeight: "600" }}>
+            <div
+              className="col-lg-3"
+              style={{ fontWeight: "600", fontSize: "14px" }}
+            >
+              Chipset
+            </div>
+            <div
+              className="col-lg-1"
+              style={{ fontWeight: "600", fontSize: "12px" }}
+            >
               Core clock Speed
             </div>
-            <div className="col-lg-2" style={{ fontWeight: "600" }}>
+            <div
+              className="col-lg-1"
+              style={{ fontWeight: "600", fontSize: "12px" }}
+            >
               Boost Clock Speed
             </div>
-            <div className="col-lg-2" style={{ fontWeight: "600" }}>
+            <div
+              className="col-lg-1"
+              style={{ fontWeight: "600", fontSize: "12px" }}
+            >
               Memory
             </div>
-            <div className="col-lg-2" style={{ fontWeight: "600" }}>
+            <div
+              className="col-lg-2"
+              style={{ fontWeight: "600", fontSize: "14px" }}
+            >
               Price
             </div>
           </div>
@@ -42,9 +70,10 @@ const Gpu = () => {
             <div className="card-body">
               <div key={data._id} className="row py-4">
                 <div className="col-lg-4">{data.name}</div>
-                <div className="col-lg-2">{data.core_clock}</div>
-                <div className="col-lg-2">{data.boost_clock}</div>
-                <div className="col-lg-2">{data.memory}</div>
+                <div className="col-lg-3">{data.chipset}</div>
+                <div className="col-lg-1">{data.core_clock}</div>
+                <div className="col-lg-1">{data.boost_clock}</div>
+                <div className="col-lg-1">{data.memory}</div>
                 <div className="col-lg-2">{data.price}</div>
               </div>
             </div>

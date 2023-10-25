@@ -2,18 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-const Navbar = () => {
+const Topnav = () => {
   let signedIn = false;
   return (
     <nav
-      className="navbar navbar-expand-lg border-body"
-      data-bs-theme="dark"
-      style={{backgroundColor: "#191523"}}
+      className="navbar sticky-top navbar-expand-lg border-body mb-5"
+      style={{ backgroundColor: "#f9b404" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          GeekBench
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,7 +22,35 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-        {/*   <ul className="navbar-nav ms-auto me-auto ">
+
+        <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/cpu">
+                Cpu
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/gpu">
+                Gpu
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/ssd">
+                Ssd
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/hdd">
+                Hdd
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/monitor">
+                Monitor
+              </Link>
+            </li>
+          </ul>
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Build
@@ -42,15 +66,11 @@ const Navbar = () => {
                 Suggest a build
               </Link>
             </li>
-          </ul>*/}
-
-          <Link className="button ms-auto" to="/">
-            {signedIn ? "Sign out" : "Sign in"}
-          </Link>
-        </div> 
+          </ul>
+        </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default Topnav;
