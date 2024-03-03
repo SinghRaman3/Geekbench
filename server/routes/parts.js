@@ -1,7 +1,6 @@
 import express from "express";
 import { cpuData, gpuData, hddData, monitorData, ramData, ssdData } from "../controllers/parts.js";
 
-
 const router = express.Router()
 
 router.get("/cpu", cpuData)

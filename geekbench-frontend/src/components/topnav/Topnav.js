@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 const Topnav = () => {
-  let signedIn = false;
+  // let signedIn = false;
   return (
     <nav
-      className="navbar sticky-top navbar-expand-lg border-body mb-5"
-      style={{ backgroundColor: "#f9b404" }}
+      className="navbar sticky-top navbar-expand-lg border-body"
+      style={{ backgroundColor: "#282b40" }}
     >
       <div className="container-fluid">
         <button
@@ -25,45 +25,45 @@ const Topnav = () => {
 
         <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/cpu">
-                Cpu
+              <Link className="topnav-link nav-link" to="/cpu">
+                CPU
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/gpu">
-                Gpu
+              <Link className="topnav-link nav-link" to="/gpu">
+                GPU
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/ssd">
-                Ssd
+              <Link className="topnav-link nav-link" to="/ram">
+                RAM
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/hdd">
-                Hdd
+              <Link className="topnav-link nav-link" to="/ssd">
+                SSD
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/monitor">
-                Monitor
+              <Link className="topnav-link nav-link" to="/hdd">
+                HDD
               </Link>
             </li>
           </ul>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="topnav-link nav-link" to="/build">
                 Build
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="topnav-link nav-link" to="/compare">
                 Compare
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Suggest a build
+              <Link className="topnav-link nav-link" to="/geekbenchAi">
+                GeekBenchAI
               </Link>
             </li>
           </ul>

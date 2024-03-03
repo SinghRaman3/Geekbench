@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { Usercontext } from "../../UserContext.js"; 
 
 const Navbar = () => {
-  let signedIn = false;
+  const {isSignedIn} = useContext(Usercontext)
   return (
     <nav
       className="navbar navbar-expand-lg border-body"
       data-bs-theme="dark"
-      style={{backgroundColor: "#191523"}}
+      style={{ backgroundColor: "#191523" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           GeekBench
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,28 +27,16 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-        {/*   <ul className="navbar-nav ms-auto me-auto ">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Build
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Compare
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Suggest a build
-              </Link>
-            </li>
-          </ul>*/}
-
-          <Link className="button ms-auto" to="/">
-            {signedIn ? "Sign out" : "Sign in"}
-          </Link>
-        </div> 
+          <div className="auth ms-auto">
+            <Link className="button" to="/login">
+              {isSignedIn ? "Sign out" : "Sign in"}
+            </Link>
+            {!isSignedIn && <div className="vr mx-3"></div>}
+            <Link className="button" to="/signup">
+              {!isSignedIn ? "Register" : null}
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );

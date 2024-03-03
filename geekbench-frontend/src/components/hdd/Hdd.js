@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { PlusCircleIcon } from "@heroicons/react/24/solid"
+import { useNavigate } from "react-router-dom";
+
 const Hdd = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate()
   useEffect(() => {
     axios
       .get("http://localhost:5000/components/hdd")
@@ -14,58 +18,59 @@ const Hdd = () => {
         console.log(error);
       });
   }, []);
+
+  const handleCLick = (data) => {
+    localStorage.setItem("hdd", JSON.stringify(data));
+    navigate("/build")
+  };
+
+  
   return (
     <div>
       <div className="container mt-4">
-        <div
-          className="card mb-2"
-          data-bs-theme="dark"
-          style={{ backgroundColor: "#1e192b" }}
-        >
-          <div className="card-body row p-2" style={{ color: "#fff" }}>
-            <div className="col-lg-4" style={{ fontWeight: "600" }}>
-              Name
-            </div>
-            <div className="col-lg-2" style={{ fontWeight: "600" }}>
-              Capacity
-            </div>
-            <div className="col-lg-1" style={{ fontWeight: "600" }}>
-              Type
-            </div>
-            <div className="col-lg-3" style={{ fontWeight: "600" }}>
-              Interace
-            </div>
-            <div className="col-lg-2" style={{ fontWeight: "600" }}>
-              Price
-            </div>
-          </div>
-        </div>
-        {data?.map((data) => (
-          <div className="card mb-2">
-            <div className="card-body">
-              <div key={data._id} className="row py-4">
-                <div className="col-lg-2">{data.name}</div>
-                <div className="col-lg-2">
-                  {data.capacity >= 2000
-                    ? "2TB"
-                    : data.capacity >= 1000
-                    ? "1TB"
-                    : data.capacity + "GB"}
+      <div className="row justify-content-center px-2">
+          {data?.map((data) => (
+            <div className="card col-md-3 mb-5 mx-md-4 p-0">
+              <img src="" alt="" style={{ maxWidth: "100%", height: "auto" }} />
+              <PlusCircleIcon className="plus-icon" onClick={() => handleCLick(data)} />
+              <div className="card-body text-start">
+                <div key={data._id} className="ssd">
+                  <h5 className='card-title'>{data.name}</h5>
+                  <div className="d-flex justify-content-between flex-wrap">
+                    <div className="me-3">
+                      <p className="type-1">Capacity</p>
+                      <p className="type-2">
+                        {data.capacity}GB
+                      </p>
+                    </div>
+
+                    <div className="me-3">
+                      <p className="type-1">Type</p>
+                      <p className="type-2">
+                        {data.type}
+                      </p>
+                    </div>
+
+                    <div className="me-3">
+                      <p className="type-1">Interface</p>
+                      <p className="type-2">{data.interface}</p>
+                    </div>
+
+                    <div className="me-3">
+                      <p className="type-1">Color</p>
+                      <p className="type-2">{data.color}</p>
+                    </div>
+                    
+                  </div>
                 </div>
-                <div className="col-lg-2">
-                  {data.cache >= 2000
-                    ? "2TB"
-                    : data.cache >= 1000
-                    ? "1TB"
-                    : data.cache + "GB"}
-                </div>
-                <div className="col-lg-2">{data.type}</div>
-                <div className="col-lg-2">{data.interface}</div>
-                <div className="col-lg-2">{data.price}</div>
+              </div>
+              <div className="card-footer p-0 m-0">
+                <p className="type-1">Price</p>
+                <p className="type-2">₹{Math.floor(data.price*85)}</p>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

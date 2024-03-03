@@ -1,0 +1,23 @@
+.header{
+
+    font-weight: 700;
+}
+
+.form-header{
+    font-size: 40px;
+    font-weight: 700;
+    color: #352b6e;
+}
+
+.underline{
+    width: 61px;
+    height: 4px;
+    background-color: #352b6e;
+    border-radius: 9px;
+}
+
+.arrowIcon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

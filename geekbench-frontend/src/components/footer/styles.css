@@ -1,0 +1,18 @@
+.footer-headers{
+    color: #f9b404;
+}
+
+.footer-link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color .2s ease-in;
+}
+
+.footer-link:hover{
+    color: rgb(72, 72, 200);
+}
+
+.copyright-text{
+    font-size: 14px;
+}

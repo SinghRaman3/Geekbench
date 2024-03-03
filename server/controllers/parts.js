@@ -1,16 +1,19 @@
 import axios from "axios"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const mongoData = "https://ap-south-1.aws.data.mongodb-api.com/app/data-xebxu/endpoint/data/v1/action/find";
 
 export const cpuData = async (req, res) => {
     await axios.post(mongoData, {
-        "collection":"cpuData",
+        "collection":"cpuNew",
         "database":"geekbench",
         "dataSource":"Cluster0"
       },{
         headers: {
             "Content-Type": "application/json",
-            "api-key": "76jVbfoVTBOVxvutfCNO23oqQrrBcstmXbggF9OYkAsz4Gq8ZVw4CrEIA9U3Cl3O",
+            "api-key": process.env.apiKey,
             "Access-Control-Request-Headers": "*",
         }
       })
@@ -30,7 +33,7 @@ export const monitorData = async (req, res) => {
     },{
       headers: {
           "Content-Type": "application/json",
-          "api-key": "76jVbfoVTBOVxvutfCNO23oqQrrBcstmXbggF9OYkAsz4Gq8ZVw4CrEIA9U3Cl3O",
+          "api-key": process.env.apiKey,
           "Access-Control-Request-Headers": "*",
       }
     })
@@ -44,13 +47,13 @@ export const monitorData = async (req, res) => {
 
 export const gpuData = async (req, res) => {
   await axios.post(mongoData, {
-      "collection":"gpuData",
+      "collection":"gpuNew",
       "database":"geekbench",
       "dataSource":"Cluster0"
     },{
       headers: {
           "Content-Type": "application/json",
-          "api-key": "76jVbfoVTBOVxvutfCNO23oqQrrBcstmXbggF9OYkAsz4Gq8ZVw4CrEIA9U3Cl3O",
+          "api-key": process.env.apiKey,
           "Access-Control-Request-Headers": "*",
       }
     })
@@ -70,7 +73,7 @@ export const ramData = async (req, res) => {
     },{
       headers: {
           "Content-Type": "application/json",
-          "api-key": "76jVbfoVTBOVxvutfCNO23oqQrrBcstmXbggF9OYkAsz4Gq8ZVw4CrEIA9U3Cl3O",
+          "api-key": process.env.apiKey,
           "Access-Control-Request-Headers": "*",
       }
     })
@@ -90,7 +93,7 @@ export const ssdData = async (req, res) => {
     },{
       headers: {
           "Content-Type": "application/json",
-          "api-key": "76jVbfoVTBOVxvutfCNO23oqQrrBcstmXbggF9OYkAsz4Gq8ZVw4CrEIA9U3Cl3O",
+          "api-key": process.env.apiKey,
           "Access-Control-Request-Headers": "*",
       }
     })
@@ -110,7 +113,7 @@ export const hddData = async (req, res) => {
     },{
       headers: {
           "Content-Type": "application/json",
-          "api-key": "76jVbfoVTBOVxvutfCNO23oqQrrBcstmXbggF9OYkAsz4Gq8ZVw4CrEIA9U3Cl3O",
+          "api-key": process.env.apiKey,
           "Access-Control-Request-Headers": "*",
       }
     })
