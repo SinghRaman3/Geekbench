@@ -454,10 +454,6 @@ const Compare = () => {
             </div>
           </div>
 
-          <div className="px-3">
-            <h5 className="text-start">Overclocked Score</h5>
-            <div className="row"></div>
-          </div>
         </>
       );
     }

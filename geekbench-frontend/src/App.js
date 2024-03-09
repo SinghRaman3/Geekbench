@@ -26,37 +26,37 @@ import Signup from "./components/auth/Signupform.js";
 import { Usercontext } from "./UserContext.js";
 
 function App() {
-  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [isSignedIn, setIsSignedIn] = useState(false);
   return (
     <div className="App">
-      <Usercontext.Provider value={{isSignedIn, setIsSignedIn}}>
-      <Privroute>
-        <Navbar />
-        <Topnav />
-      </Privroute>
+      <Usercontext.Provider value={{ isSignedIn, setIsSignedIn }}>
+        <Privroute>
+          <Navbar />
+          <Topnav />
+        </Privroute>
 
-      <Routes>
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/" element={<Home />} />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Home />} />
 
-        {/* Component Routes */}
-        <Route path="/cpu" element={<Cpu />} />
-        <Route path="/gpu" element={<Gpu />} />
-        <Route path="/ssd" element={<Ssd />} />
-        <Route path="/hdd" element={<Hdd />} />
-        <Route path="/ram" element={<Ram />} />
-        <Route path="/monitor" element={<Monitor />} />
+          {/* Component Routes */}
+          <Route path="/cpu" element={<Cpu />} />
+          <Route path="/gpu" element={<Gpu />} />
+          <Route path="/ssd" element={<Ssd />} />
+          <Route path="/hdd" element={<Hdd />} />
+          <Route path="/ram" element={<Ram />} />
+          <Route path="/monitor" element={<Monitor />} />
 
-        {/* Productivity routes */}
-        <Route path="/build" element={<Build />} />
-        <Route path="/compare" element={<Compare />} />
-        <Route path="/geekbenchAi" element={<Ai />} />
-      </Routes>
+          {/* Productivity routes */}
+          <Route path="/build" element={<Build />} />
+          <Route path="/compare" element={<Compare />} />
+          <Route path="/geekbenchAi" element={<Ai />} />
+        </Routes>
 
-      <Privroute>
-        <Footer />
-      </Privroute>
+        <Privroute>
+          <Footer />
+        </Privroute>
       </Usercontext.Provider>
     </div>
   );

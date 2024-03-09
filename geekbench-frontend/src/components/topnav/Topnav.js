@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 const Topnav = () => {
-  // let signedIn = false;
   return (
     <nav
       className="navbar sticky-top navbar-expand-lg border-body"
