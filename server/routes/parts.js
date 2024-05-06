@@ -8,6 +8,5 @@ router.get("/gpu", gpuData)
 router.get("/ram", ramData)
 router.get("/ssd", ssdData)
 router.get("/hdd", hddData)
-router.get("/monitor", monitorData)
 
 export default router

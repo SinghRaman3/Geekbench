@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-const mongoData = "https://ap-south-1.aws.data.mongodb-api.com/app/data-xebxu/endpoint/data/v1/action/find";
+const mongoData = process.env.MONGO_URL;
 
 export const cpuData = async (req, res) => {
     await axios.post(mongoData, {
@@ -21,7 +21,7 @@ export const cpuData = async (req, res) => {
         res.status(200).json(response.data)
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.message);
       });
 }
 
