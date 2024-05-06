@@ -13,22 +13,22 @@ const Compare = () => {
     if (field === "singleCore" && score === "avg")
       localVal =
         Math.round(
-          component.Benchmark * ( (1.68 - 1.44) + 1.44)
+          component.Benchmark * (Math.random() * (1.68 - 1.44) + 1.44)
         ) || null;
     else if (field === "dualCore" && score === "avg")
       localVal =
         Math.round(
-          component.Benchmark * ( (1.68 - 1.44) + 1.44) * 2
+          component.Benchmark * (Math.random() * (1.68 - 1.44) + 1.44) * 2
         ) || null;
     else if (field === "quadCore" && score === "avg")
       localVal =
         Math.round(
-          component.Benchmark * ( (1.68 - 1.44) + 1.44) * 3.8
+          component.Benchmark * (Math.random() * (1.68 - 1.44) + 1.44) * 3.8
         ) || null;
     else if (field === "octaCore" && score === "avg")
       localVal =
         Math.round(
-          component.Benchmark * ( (1.68 - 1.44) + 1.44) * 7.3
+          component.Benchmark * (Math.random() * (1.68 - 1.44) + 1.44) * 7.3
         ) || null;
 
     return localVal;
@@ -285,11 +285,6 @@ const Compare = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="px-3">
-            <h5 className="text-start">Overclocked Score</h5>
-            <div className="row"></div>
           </div>
         </>
       );
